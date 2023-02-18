@@ -29,7 +29,6 @@ const Home = () => {
     <div>
       <h1>MARVEL'S Characters</h1>
       <div>
-        <image></image>
         <p>
           {marvelInfos.map((characters, index) => {
             console.log(
