@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/comics" element={<Comics />} />
-        <Route path="/related-comics" element={<RelatedCommics />} />
+        <Route path="/comics/:characterId" element={<RelatedCommics />} />
       </Routes>
     </Router>
   );

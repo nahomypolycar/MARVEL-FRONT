@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [marvelInfos, setMarvelInfos] = useState("");
@@ -32,18 +33,20 @@ const Home = () => {
         <p>
           {marvelInfos.map((characters, index) => {
             return (
-              <div key={characters._id}>
-                <img
-                  alt={characters.name + "'s potrait"}
-                  src={
-                    characters.thumbnail.path +
-                    "/portrait_small." +
-                    characters.thumbnail.extension
-                  }
-                />
-                <p>{characters.name}</p>
-                <p>{characters.description}</p>
-              </div>
+              <Link to={"/comics/" + characters._id} key={characters.id}>
+                <div>
+                  <img
+                    alt={characters.name + "'s potrait"}
+                    src={
+                      characters.thumbnail.path +
+                      "/portrait_small." +
+                      characters.thumbnail.extension
+                    }
+                  />
+                  <p>{characters.name}</p>
+                  <p>{characters.description}</p>
+                </div>
+              </Link>
             );
           })}
         </p>
