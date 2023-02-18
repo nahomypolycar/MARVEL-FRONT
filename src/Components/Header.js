@@ -9,7 +9,9 @@ const Header = () => {
         <img src={logo} alt="Marvel's logo" />
         <button>Personnages</button>
       </Link>
-      <button>Comics</button>
+      <Link to="/comics">
+        <button>Comics</button>
+      </Link>
       <button>Favoris</button>
     </div>
   );

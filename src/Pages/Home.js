@@ -31,14 +31,8 @@ const Home = () => {
       <div>
         <p>
           {marvelInfos.map((characters, index) => {
-            console.log(
-              "photo",
-              characters.thumbnail.path +
-                "/portrait_small." +
-                characters.thumbnail.extension
-            );
             return (
-              <div>
+              <div key={characters._id}>
                 <img
                   alt={characters.name + "'s potrait"}
                   src={

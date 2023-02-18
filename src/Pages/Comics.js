@@ -31,7 +31,7 @@ const Comics = () => {
       <div>
         {comicsInfos.map((comics, index) => {
           return (
-            <div>
+            <div key={comics._id}>
               <img
                 src={
                   comics.thumbnail.path +
@@ -40,7 +40,7 @@ const Comics = () => {
                 }
                 alt={comics.title + "'s cover"}
               />
-              <p key={index}>{comics.title}</p>
+              <p>{comics.title}</p>
               <p>{comics.description}</p>
             </div>
           );
