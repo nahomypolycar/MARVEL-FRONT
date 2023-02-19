@@ -3,21 +3,22 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const RelatedCommics = () => {
+const RelatedComics = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [charactersComics, setCharactersComics] = useState("");
+  const [comicsCharacters, setComicsCharacters] = useState("");
 
   const params = useParams();
-  console.log("params >>>", params);
-  const { id } = params;
+  console.log("params", params);
+  const { characterid } = params;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://site--back-marvel--d7tgfjtm8844.code.run/comics/" + { id }
+          `https://site--back-marvel--d7tgfjtm8844.code.run/related-comics/${characterid}`
         );
-        console.log("response >>>", response.data);
+        console.log("response characterId >>>", response.data);
+        setComicsCharacters(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -26,7 +27,14 @@ const RelatedCommics = () => {
 
     fetchData();
   }, []);
-  return <div>personnage + comics dans lequel il apparaît</div>;
+
+  return isLoading ? (
+    <div>Loading...</div>
+  ) : (
+    <div>
+      <h1>COMICS RELATED TO CHARACTERS</h1>
+    </div>
+  );
 };
 
-export default RelatedCommics;
+export default RelatedComics;
