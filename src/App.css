@@ -101,7 +101,7 @@
   background-color: whitesmoke;
   background-repeat: no-repeat;
   background-size: 1950px 1000px;
-  filter: opacity(50%);
+  position: relative;
 }
 
 h1 {

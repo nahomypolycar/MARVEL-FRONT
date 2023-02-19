@@ -19,6 +19,7 @@ const RelatedComics = () => {
         );
         console.log("response characterId >>>", response.data);
         setComicsCharacters(response.data);
+        console.log(comicsCharacters);
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -26,7 +27,7 @@ const RelatedComics = () => {
     };
 
     fetchData();
-  }, []);
+  });
 
   return isLoading ? (
     <div>Loading...</div>

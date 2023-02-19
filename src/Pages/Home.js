@@ -41,7 +41,7 @@ const Home = ({ name, setName }) => {
   // Filtrer les résultats à afficher en fonction de la page actuelle je slide entre 0 et 100
   console.log("marvels-infos >>>", marvelInfos);
   const filteredMarvelInfos = marvelInfos.slice(startIndex, endIndex);
-  // setMarvelInfos(filteredMarvelInfos);
+  console.log(filteredMarvelInfos);
 
   return isLoading ? (
     <div>En cours de chargement</div>
