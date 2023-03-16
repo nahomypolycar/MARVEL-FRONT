@@ -22,6 +22,7 @@ const Home = ({ name, setName }) => {
           "https://site--back-marvel--d7tgfjtm8844.code.run/characters" +
             filters
         );
+        //https://site--back-marvel--d7tgfjtm8844.code.run/characters
         console.log("filters page home", filters);
         console.log("response >>>", response.data.response);
         setMarvelInfos(response.data.response);
@@ -52,12 +53,12 @@ const Home = ({ name, setName }) => {
         <div>
           <div className="cards">
             {marvelInfos.map((characters, index) => {
-              console.log("charcaters >>>>", characters);
+              console.log("characters ids>>>>", characters._id);
               return (
                 <Link
                   className="charactersFile"
                   to={"/comics/" + characters._id}
-                  key={characters.id}
+                  key={characters._id}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <div className="herosInfos">
