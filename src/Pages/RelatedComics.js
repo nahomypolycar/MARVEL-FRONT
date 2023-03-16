@@ -15,7 +15,7 @@ const RelatedComics = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--back-marvel--d7tgfjtm8844.code.run/related-comics/${characterid}`
+          `https://site--back-marvel--d7tgfjtm8844.code.run/comics/${characterid}`
         );
         console.log("response characterId >>>", response.data);
         setComicsCharacters(response.data);
